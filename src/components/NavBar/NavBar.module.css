@@ -1,19 +1,23 @@
 .navBar {
     position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
 
     width: 100%;
-    padding: 1.5rem 4rem;
+    height: 10vh;
+    padding:1rem 4rem;
     font-size: 18px;
     font-weight: bold;
 
     background: black;
+    z-index: 10;
 }
 
 .navElements{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     
     width: 25vw;
 }
