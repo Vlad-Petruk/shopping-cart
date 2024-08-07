@@ -1,0 +1,23 @@
+.navBar {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+
+    width: 100vw;
+    padding: 1.5rem 3rem;
+    font-size: 18px;
+    font-weight: bold;
+
+    background: black;
+}
+
+.navElements{
+    display: flex;
+    justify-content: space-between;
+    
+    width: 25vw;
+}
+
+/* .logo{
+
+} */
