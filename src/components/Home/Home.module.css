@@ -7,6 +7,58 @@
 
 .info{
     flex: 1;
+    align-self: center;
+}
+
+.info>h1 {
+    font-size: 75px;
+    font-weight: bold;
+}
+
+.info p{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.shopBtn{
+    font-size: 20px;
+    font-weight: bold;
+
+    padding: 15px 20px;
+
+    background: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 990px;
+
+}
+
+.sellNumbers {
+    display: flex;
+    margin-top: 1rem;
+    gap: 20px;
+}
+
+.sellNumbers p{
+    margin: 0;
+}
+
+.brands,
+.products,
+.customers{
+    padding-right: 20px;
+}
+
+.brands,
+.products{
+    border-right: 1px solid rgb(46, 44, 44);
+}
+
+.brands>:first-child,
+.products>:first-child,
+.customers>:first-child {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .photoBox{
@@ -15,7 +67,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden; */
-    
 }
 
 .img{
