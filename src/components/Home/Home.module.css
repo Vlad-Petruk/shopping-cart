@@ -1,0 +1,24 @@
+.mainContainer{
+    display: flex;
+    height: 88vh;
+    /* padding-top: 2rem; */
+
+}
+
+.info{
+    flex: 1;
+}
+
+.photoBox{
+    flex: 1;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; */
+    
+}
+
+.img{
+    width: 100%;
+    height: auto;
+}
