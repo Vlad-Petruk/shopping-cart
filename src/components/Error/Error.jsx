@@ -1,5 +1,7 @@
-function Home() {
-  return <></>;
+function Error() {
+  return (
+    <></>
+  );
 }
 
-export default Home;
+export default Error;
