@@ -1,6 +1,6 @@
 .mainContainer{
     display: flex;
-    height: 88vh;
+    min-height: 88vh;
     /* padding-top: 2rem; */
 
 }
@@ -10,14 +10,17 @@
     align-self: center;
 }
 
-.info>h1 {
-    font-size: 75px;
-    font-weight: bold;
+.info>:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-size: 5vw;
+    font-weight: 900;
+    line-height: 1;
 }
 
 .info p{
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    /* font-size: 1rem; */
 }
 
 .shopBtn{
@@ -30,12 +33,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     border: none;
     border-radius: 990px;
+    transition: transform 0.3s ease;
+}
 
+.shopBtn:hover{
+    transform: scale(1.1);
 }
 
 .sellNumbers {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 2rem;
     gap: 20px;
 }
 
@@ -57,19 +64,18 @@
 .brands>:first-child,
 .products>:first-child,
 .customers>:first-child {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
     font-size: 20px;
-    font-weight: bold;
 }
 
 .photoBox{
     flex: 1;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; */
+    max-height: 88vh;
 }
 
 .img{
     width: 100%;
     height: auto;
+
 }
