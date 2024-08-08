@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Home.module.css'
 
 function Home() {
@@ -5,9 +6,11 @@ function Home() {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.info}>
-        <h1>Find Products That Matches Your Style</h1>
+        <p>Find Products That Matches Your Style</p>
         <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-        <button className={styles.shopBtn}>Shop now</button>
+        <Link to="shop">
+          <button className={styles.shopBtn}>Shop now</button>
+          </Link>
         <div className={styles.sellNumbers}>
           <div className={styles.brands}>
             <p>200+</p>
