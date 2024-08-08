@@ -1,0 +1,49 @@
+.shop{
+    min-height: 88vh;
+    display: flex;
+}
+
+.sideBar {
+    width: 18vw;
+    color: rgb(112, 87, 87);
+    box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.4);
+
+    padding-top: 3rem;
+    font-size: 18px;
+    font-weight: 500;
+} 
+
+.categoriesBox>:first-child{
+    color: black;
+    font-size: 22px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.categories {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.categories p{
+    padding: 5px;
+}
+
+.categories p:hover {
+    background: rgb(161, 150, 150);
+    border-radius: 5px;
+    color: black;
+}
+
+.categories p:focus{
+    background: black;
+    color: white;
+}
+
+
+
+.productBox{
+    flex: 1;
+}
