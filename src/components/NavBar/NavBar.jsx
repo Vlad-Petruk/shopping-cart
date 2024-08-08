@@ -6,7 +6,7 @@ function NavBar() {
     return (
       <>
         <div className={styles.navBar}>
-          <div className={styles.logo}>Logo</div>
+          <div className={styles.logo}>DASHA.SHOP</div>
           <div className={styles.navElements}>
             <Link to="/">
               <div className={styles.home}>Home</div>
@@ -15,7 +15,9 @@ function NavBar() {
               <div className={styles.shop}>Shop</div>
             </Link>
             <Link to="cart">
-            <div className={styles.cart}>Cart</div>
+            <div className={styles.cart}>
+              <img className={styles.cartImg} src="/cart.png" alt="" />
+            </div>
             </Link>
           </div>
         </div>
