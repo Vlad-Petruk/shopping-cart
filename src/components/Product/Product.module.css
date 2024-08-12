@@ -1,6 +1,45 @@
 .productBox{
-    flex: 1 1 300px; /* Allow items to shrink and grow with a base width */
-    background: gray;
-    max-width: calc(33.333% - 2rem); /* Ensure items don’t grow beyond one-third of the container minus the gap */
+    flex: 1 1 300px; 
+    max-width: calc(33.333% - 2rem);
     min-width: 200px;
+    min-height: 350px;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform .3s ease;
+}
+
+.productBox:hover{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.imgBox{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+}
+
+.imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ratings {
+    display: flex;
+    gap: 5px;
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; 
+}
+
+.price {
+    margin-top: auto; /* Pushes the price to the bottom of the container */
+    font-size: 20px;
+    font-weight: 700;
+    text-align: start; /* Aligns the price text to the end */
 }
