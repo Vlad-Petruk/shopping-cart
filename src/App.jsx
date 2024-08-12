@@ -18,9 +18,9 @@ function App() {
           return response.json();
         })
         .then(data=>{
-          setData(data)
+          const dataToArray = Object.values(data);
+          setData(dataToArray)
           setLoading(false)
-          console.log(data)
         })
         .catch((error) => {
           setError(error);
@@ -29,13 +29,13 @@ function App() {
     }, [parameters])
   }
 
-  useFetch('')
+  // useFetch('')
 
   return (
     <>
       <NavBar />
       <div className='main-content'>
-        <Outlet />
+        <Outlet context={{ data, error, loading, useFetch }}/>
       </div>
       <Footer />
     </>
