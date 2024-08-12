@@ -17,7 +17,7 @@ function ProductBox() {
       <div className={styles.productBox}>
         {console.log(data)}
         {data.map((product)=>(
-          <Product key={product.id} title={product.title} img = {product.img} price={product.price} rating={product.rating} />
+          <Product key={product.id} title={product.title} img = {product.image} price={product.price} ratingRate={product.rating.rate} ratingCount={product.rating.count} />
         ))}
       </div>
     );
