@@ -1,11 +1,21 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
 .shop{
     min-height: 90vh;
     display: flex;
+    width: 100%;
+    padding: 0 4rem;
+    background: white;
 }
 
 .sideBar {
     width: 18vw;
-    color: rgb(112, 87, 87);
+    color: rgb(68, 61, 61);
     box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.4);
 
     padding-top: 3rem;
@@ -52,3 +62,4 @@
     padding: 2rem;
     gap: 2rem;
 }
+
