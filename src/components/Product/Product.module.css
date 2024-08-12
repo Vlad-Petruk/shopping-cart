@@ -1,0 +1,6 @@
+.productBox{
+    flex: 1 1 300px; /* Allow items to shrink and grow with a base width */
+    background: gray;
+    max-width: calc(33.333% - 2rem); /* Ensure items don’t grow beyond one-third of the container minus the gap */
+    min-width: 200px;
+}
