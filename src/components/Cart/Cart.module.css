@@ -48,9 +48,61 @@
 }
 
 .sum{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     border: 1px solid black;
     border-radius: 10px;
-    height: 12rem;
+    height: 13rem;
     margin:0 10px;
+    padding: 1rem;
+}
+
+.h2{
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.subtotal,
+.delivery,
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.totalPrice{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.subtotal>:first-child,
+.delivery>:first-child{
+    color: rgb(112, 104, 104);
+}
+
+.total{
+    border-top: 1px solid rgb(191, 168, 168);
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.buyBtn{
+    background: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    width: 200px;
+    padding: 7px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 9000px;
+    align-self: center;
 }
 

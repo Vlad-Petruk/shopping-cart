@@ -24,7 +24,20 @@ function Cart() {
         </div>
         <div className={styles.sumBox}>
           <div className={styles.sum}>
-
+            <p className={styles.h2}>Order Summary</p>
+            <div className={styles.subtotal}>
+              <p>Subtotal</p>
+              <p className={styles.price}>price</p>
+            </div>
+            <div className={styles.delivery}>
+              <p>Delivery fee</p>
+              <p className={styles.price}>$0</p>
+            </div>
+            <div className={styles.total}>
+              <p>Total</p>
+              <p className={styles.totalPrice}>$0</p>
+            </div>
+            <button className={styles.buyBtn}>Buy</button>
           </div>
         </div>
       </div>
