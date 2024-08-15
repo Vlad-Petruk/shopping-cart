@@ -43,3 +43,21 @@
 .cartImg{
     width: 30px;
 }
+
+.cartAmount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    background: red;
+    border-radius: 50%;
+}
+
+.cartAmount:hover{
+    text-decoration: none!important;
+}

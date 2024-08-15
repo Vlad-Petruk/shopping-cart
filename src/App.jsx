@@ -1,16 +1,18 @@
 import { Outlet } from "react-router-dom";
-// import { useState, useEffect } from "react";
+import { useState } from "react";
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
+  const [cartAmount, setCartAmount] = useState(0);
+  const [cart, setCart] = useState([])
 
   return (
     <>
-      <NavBar />
+      <NavBar cartAmount={cartAmount}/>
       <div className='main-content'>
-        <Outlet/>
+        <Outlet context={[cart, setCart, cartAmount, (a)=>setCartAmount(a)]}/>
       </div>
       <Footer />
     </>

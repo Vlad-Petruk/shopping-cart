@@ -1,8 +1,17 @@
+import { useOutletContext } from "react-router-dom";
 import styles from "./Shop.module.css";
 import Product from "../Product/Product";
 import Loading from "../Loading/Loading";
 
 function ProductBox({ data, error, loading }) {
+  const [cart, setCart, cartAmount, setCartAmount] = useOutletContext();
+  
+  function addProduct(product) {
+    setCart([...cart, product]);
+    setCartAmount(cartAmount + 1); 
+  }
+  console.log(cart)
+
   if (loading) {
     return <div className={styles.loading}><Loading /></div> ;
   }
@@ -25,6 +34,7 @@ function ProductBox({ data, error, loading }) {
           price={product.price}
           ratingRate={product.rating.rate}
           ratingCount={product.rating.count}
+          handleClick = {()=>addProduct(product)}
         />
       ))}
     </div>

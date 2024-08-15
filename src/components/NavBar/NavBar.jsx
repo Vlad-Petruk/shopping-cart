@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
 
-function NavBar() {
-
+function NavBar({cartAmount}) {
     return (
       <>
         <div className={styles.navBar}>
@@ -17,6 +16,7 @@ function NavBar() {
             <Link to="cart">
             <div className={styles.cart}>
               <img className={styles.cartImg} src="/cart.png" alt="" />
+              <p className={styles.cartAmount}>{cartAmount}</p>
             </div>
             </Link>
           </div>
