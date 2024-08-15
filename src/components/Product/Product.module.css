@@ -3,6 +3,8 @@
     max-width: calc(33.333% - 2rem);
     min-width: 200px;
     min-height: 350px;
+
+    font-size: 16px;
     
     display: flex;
     flex-direction: column;
@@ -32,14 +34,44 @@
 
 .ratings {
     display: flex;
+    align-items: center;
     gap: 5px;
     margin: 0; /* Remove default margin */
     flex-grow: 1; 
 }
 
-.price {
+.ratingRate{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ratings img{
+    width: 20px;
+}
+
+.priceAndBtn {
     margin-top: auto; /* Pushes the price to the bottom of the container */
     font-size: 20px;
     font-weight: 700;
-    text-align: start; /* Aligns the price text to the end */
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 7px;
+
+    padding: 8px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+}
+
+.cartPng{
+    object-fit: contain;
+    width: 18px;
 }

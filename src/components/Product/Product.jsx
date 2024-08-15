@@ -9,10 +9,14 @@ function Product ({title, price, img, ratingRate, ratingCount}) {
             </div>
                 <p>{title}</p>
                 <div className={styles.ratings}>
-                    <p>{ratingRate}</p>
-                    <p>{ratingCount}</p>
+                    <img src="/star.png" alt="" />
+                    <p className={styles.ratingRate}>{ratingRate}</p>
+                    <p>({ratingCount})</p>
                 </div>
-                <p className={styles.price}>${price}</p>
+                <div className={styles.priceAndBtn}>
+                    <p className={styles.price}>${price}</p>
+                    <button className={styles.btn}><img className={styles.cartPng} src="/cart.png" alt="" />Add to cart</button>
+                </div>
             
         </div>
     )
