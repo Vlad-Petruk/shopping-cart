@@ -13,6 +13,10 @@ function ProductBox({ data, error, loading }) {
 
   return (
     <div className={styles.productBox}>
+      <div className={styles.search}>
+          <input type="text" className={styles.input} placeholder="Search for products..."/>
+          <div className={styles.quontity}>{data.length} items</div>
+      </div>
       {data.map((product) => (
         <Product
           key={product.id}

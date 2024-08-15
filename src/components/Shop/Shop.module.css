@@ -45,14 +45,13 @@
     background: rgb(161, 150, 150);
     border-radius: 5px;
     color: black;
+    cursor: pointer;
 }
 
-.categories p:focus{
+.clicked{
     background: black;
     color: white;
 }
-
-
 
 .productBox{
     flex: 1;
@@ -61,5 +60,26 @@
     flex-wrap: wrap;
     padding: 2rem;
     gap: 2rem;
+}
+
+.search{
+    /* justify-self: start; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.input{
+    width: 350px;
+    height: 40px;
+    border-radius: 9000px;
+    padding: 2px 10px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+    box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
