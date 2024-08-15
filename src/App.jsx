@@ -12,7 +12,7 @@ function App() {
     <>
       <NavBar cartAmount={cartAmount}/>
       <div className='main-content'>
-        <Outlet context={[cart, setCart, cartAmount, (a)=>setCartAmount(a)]}/>
+        <Outlet context={[cart, setCart, cartAmount, setCartAmount]}/>
       </div>
       <Footer />
     </>
