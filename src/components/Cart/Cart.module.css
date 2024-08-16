@@ -106,3 +106,36 @@
     align-self: center;
 }
 
+/* Empty cart */
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 6rem;
+}
+
+.empty p{
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 50px;
+}
+
+.shopBtn{
+    background: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 9000px;
+    box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.shopBtn:hover{
+    transform: scale(1.1);
+}
+
