@@ -30,12 +30,17 @@
 
 .product{
     width: 80%;
-    border: 1px solid black;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
     min-height: 8rem;
     padding: 15px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform .3s ease;
+}
+
+.product:hover{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 
@@ -96,11 +101,16 @@
     border-radius: 9000px;
 }
 
-.plusMinusBox div{
+.plusMinusBox *{
     padding-bottom: 4px;
+    cursor: pointer;
 }
 
-
+.itemAmount{
+    font-size: 18px;
+    cursor: default;
+    padding-top: 2px;
+}
 
 /* Sum section */
 
@@ -115,11 +125,11 @@
     flex-direction: column;
     justify-content: space-between;
 
-    border: 1px solid black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    height: 13rem;
+    height: 15rem;
     margin:0 10px;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .h2{

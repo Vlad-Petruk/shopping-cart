@@ -1,6 +1,21 @@
+import { useState } from "react"
+import { useOutletContext } from "react-router-dom";
 import styles from "./Cart.module.css"
 
-function CartProduct ({title, img, price, deleteItem}) {
+function CartProduct ({title, img, price, deleteItem, setSum}) {
+    const [itemAmount, setItemAmount] = useState(1);
+
+    function increase() {
+        setItemAmount((amount) => amount + 1);
+        setSum((sum) => (parseFloat(sum) + price).toFixed(2));
+    }
+    
+    function decrease() {
+        if (itemAmount > 1) {
+            setItemAmount((amount) =>amount - 1);
+            setSum((sum) => (parseFloat(sum) - price).toFixed(2));
+        }
+    }
     
 
     return (
@@ -14,9 +29,9 @@ function CartProduct ({title, img, price, deleteItem}) {
             <div className={styles.btnSection}>
                 <button className={styles.delete} onClick={deleteItem}>X</button>
                 <div className={styles.plusMinusBox}>
-                        <div>−</div>
-                        <div className={styles.itemAmount}>0</div>
-                        <div>+</div>
+                        <div onClick={decrease}>−</div>
+                        <div className={styles.itemAmount}>{itemAmount}</div>
+                        <div onClick={increase}>+</div>
                 </div>
             </div>
            

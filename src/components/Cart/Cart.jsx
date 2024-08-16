@@ -1,9 +1,16 @@
+import { useState, useEffect } from "react";
 import { useOutletContext, Link } from "react-router-dom";
 import CartProduct from "./CartProduct";
 import styles from "./Cart.module.css"
 
 function Cart() {
   const [cart, setCart, cartAmount, setCartAmount] = useOutletContext(); 
+  const [sum, setSum] = useState(0);
+
+  useEffect(()=>{
+    const totalSum = cart.reduce((acc, prod) => acc + prod.price, 0);
+    setSum(totalSum);
+  },[cart])
   
   const deleteItem = (id) => {
     const updatedCart = cart.filter((product) => product.id !== id);
@@ -25,6 +32,7 @@ function Cart() {
                   img={product.image}
                   price={product.price}
                   deleteItem={() => deleteItem(product.id)}
+                  setSum={setSum}
                 />
               ))}
             </div>
@@ -34,7 +42,7 @@ function Cart() {
               <p className={styles.h2}>Order Summary</p>
               <div className={styles.subtotal}>
                 <p>Subtotal</p>
-                <p className={styles.price}>price</p>
+                <p className={styles.price}>${sum}</p>
               </div>
               <div className={styles.delivery}>
                 <p>Delivery fee</p>
@@ -42,7 +50,7 @@ function Cart() {
               </div>
               <div className={styles.total}>
                 <p>Total</p>
-                <p className={styles.totalPrice}>$0</p>
+                <p className={styles.totalPrice}>${sum}</p>
               </div>
               <button className={styles.buyBtn}>Buy</button>
             </div>
