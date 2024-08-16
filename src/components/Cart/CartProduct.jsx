@@ -1,9 +1,34 @@
 import { useState } from "react"
-import { useOutletContext } from "react-router-dom";
+import { useEffect } from "react";
 import styles from "./Cart.module.css"
 
-function CartProduct ({title, img, price, deleteItem, setSum}) {
+function CartProduct ({title, img, price, deleteItem, setSum, cart}) {
     const [itemAmount, setItemAmount] = useState(1);
+    // useEffect(() => {
+    //     const newCart = [...cart];
+    //     const totalSum = newCart.reduce((acc, prod) => {
+    //         if (prod.id === title) {
+    //             return acc + prod.price * itemAmount;
+    //         }
+    //         return acc + prod.price;
+    //     }, 0);
+    //     setSum(totalSum.toFixed(2));
+    // }, [itemAmount, cart, setSum, title]);
+
+    // function increase() {
+    //     setItemAmount((amount) => amount + 1);
+    // }
+
+    // function decrease() {
+    //     if (itemAmount > 1) {
+    //         setItemAmount((amount) => amount - 1);
+    //     }
+    // }
+    useEffect(()=>{
+        const newCart = [...cart]
+        const totalSum = newCart.reduce((acc, prod) => acc + prod.price, 0);
+        setSum(totalSum);
+      },[cart])
 
     function increase() {
         setItemAmount((amount) => amount + 1);

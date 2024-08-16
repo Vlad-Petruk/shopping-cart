@@ -2,17 +2,33 @@ import { useOutletContext } from "react-router-dom";
 import styles from "./Shop.module.css";
 import Product from "../Product/Product";
 import Loading from "../Loading/Loading";
+import { useState } from "react";
 
 function ProductBox({ data, error, loading }) {
   const [cart, setCart, cartAmount, setCartAmount] = useOutletContext();
-  
+  const [searchTerm, setSearchTerm] = useState("");
+
   function addProduct(product) {
     setCart([...cart, product]);
     setCartAmount(cartAmount + 1); 
   }
 
+  function isProductInCart(productId) {
+    return cart.some(cartItem => cartItem.id === productId);
+  }
+
+  // Handle search input change
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Filter products based on search term
+  const filteredProducts = data.filter(product =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (loading) {
-    return <div className={styles.loading}><Loading /></div> ;
+    return <div className={styles.loading}><Loading /></div>;
   }
 
   if (error) {
@@ -22,10 +38,16 @@ function ProductBox({ data, error, loading }) {
   return (
     <div className={styles.productBox}>
       <div className={styles.search}>
-          <input type="text" className={styles.input} placeholder="Search for products..."/>
-          <div className={styles.quontity}>{data.length} items</div>
+        <input
+          type="text"
+          className={styles.input}
+          placeholder="Search for products..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+        <div className={styles.quantity}>{filteredProducts.length} items</div>
       </div>
-      {data.map((product) => (
+      {filteredProducts.map((product) => (
         <Product
           key={product.id}
           title={product.title}
@@ -33,7 +55,8 @@ function ProductBox({ data, error, loading }) {
           price={product.price}
           ratingRate={product.rating.rate}
           ratingCount={product.rating.count}
-          handleClick = {()=>addProduct(product)}
+          checkInCart={() => isProductInCart(product.id)}
+          handleClick={() => addProduct(product)}
         />
       ))}
     </div>

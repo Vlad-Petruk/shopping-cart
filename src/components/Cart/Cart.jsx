@@ -7,16 +7,15 @@ function Cart() {
   const [cart, setCart, cartAmount, setCartAmount] = useOutletContext(); 
   const [sum, setSum] = useState(0);
 
-  useEffect(()=>{
-    const totalSum = cart.reduce((acc, prod) => acc + prod.price, 0);
-    setSum(totalSum);
-  },[cart])
-  
   const deleteItem = (id) => {
     const updatedCart = cart.filter((product) => product.id !== id);
     setCartAmount(cartAmount-1)
     setCart(updatedCart);
   };
+
+  const updateCart = (updatedCart) => {
+    setCart(updatedCart);
+};
  
   return (
     <div className={styles.cart}>
@@ -33,6 +32,8 @@ function Cart() {
                   price={product.price}
                   deleteItem={() => deleteItem(product.id)}
                   setSum={setSum}
+                  cart={cart}
+                  updateCart={updateCart}
                 />
               ))}
             </div>
