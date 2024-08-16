@@ -10,7 +10,6 @@ function ProductBox({ data, error, loading }) {
     setCart([...cart, product]);
     setCartAmount(cartAmount + 1); 
   }
-  console.log(cart)
 
   if (loading) {
     return <div className={styles.loading}><Loading /></div> ;
