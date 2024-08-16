@@ -1,10 +1,15 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import CartProduct from "./CartProduct";
 import styles from "./Cart.module.css"
 
 function Cart() {
   const [cart, setCart, cartAmount, setCartAmount] = useOutletContext(); 
-
+  
+  const deleteItem = (id) => {
+    const updatedCart = cart.filter((product) => product.id !== id);
+    setCartAmount(cartAmount-1)
+    setCart(updatedCart);
+  };
  
   return (
     <div className={styles.cart}>
@@ -19,7 +24,7 @@ function Cart() {
                   title={product.title}
                   img={product.image}
                   price={product.price}
-                  // deleteItem = {}
+                  deleteItem={() => deleteItem(product.id)}
                 />
               ))}
             </div>
@@ -46,7 +51,9 @@ function Cart() {
       ) : (
         <div className={styles.empty}>
           <p>Your cart is empty</p>
-          <button className={styles.shopBtn}>Shop now</button>
+          <Link to={'/shop'}>
+            <button className={styles.shopBtn}>Shop now</button>
+          </Link>
           </div>
       )}
     </div>
