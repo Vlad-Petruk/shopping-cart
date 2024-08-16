@@ -29,22 +29,85 @@
 }
 
 .product{
+    width: 80%;
     border: 1px solid black;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    height: 8rem;
-    padding: 10px;
+    min-height: 8rem;
+    padding: 15px;
 }
+
+
 
 .product img {
     object-fit: contain;
-    width: 12vw;
+    width: 7vw;
+    padding-left: 2rem;
 }
+
+.middleBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    width: 60%;
+}
+
+.title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.itemPrice{
+    font-size: 20px;
+    font-weight: 700;
+    align-self: end;
+}
+
+.btnSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.delete{
+    height: 1.5rem;
+    width: 1.5rem;
+    border: none;
+    background: rgb(245, 111, 111);
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plusMinusBox {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    width: 6rem;
+    font-size: 20px;
+    font-weight: 700;
+    background: gainsboro;
+    padding: 1px 12px;
+    border-radius: 9000px;
+}
+
+.plusMinusBox div{
+    padding-bottom: 4px;
+}
+
+
+
+/* Sum section */
 
 .sumBox{
     flex: 1;
     padding-top: 8rem;
+    /* display: none; */
 }
 
 .sum{
