@@ -1,5 +1,56 @@
 .footer{
-    height: 10rem;
+    min-height: 10rem;
     background: black;
+    /* padding: 1.5rem 4rem; */
+
+    display: flex;
+    flex-direction: column;
+}
+
+.infoAndLinks{
     padding: 1.5rem 4rem;
+    display: flex;
+    gap: 20px;
+}
+
+.info{
+    flex: 3;
+}
+
+h1{
+    font-weight: 900;
+    margin: 2rem 0;
+}
+
+.info p{
+    width: 60%;
+    padding-bottom: 2rem;
+}
+
+.links{
+    flex: 1;
+    padding-top: 2rem;
+}
+
+.links p,
+.links a{
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 30px;
+    padding-bottom: 2rem;
+}
+
+.madeBy{
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid gray ;
+    padding: 1.5rem 4rem;
+    font-size: 14px;
+    color: gray;
 }
