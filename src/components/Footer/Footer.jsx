@@ -16,10 +16,10 @@ function Footer() {
               <Link to="/">
                 <p>Home</p>
               </Link>
-              <Link to="/">
+              <Link to="/shop">
                 <p>Shop</p> 
               </Link>
-              <Link to="/">
+              <Link to="/cart">
                 <p>Cart</p>
               </Link>
               <a href='https://github.com/Vlad-Petruk/shopping-cart'>Repository</a>
