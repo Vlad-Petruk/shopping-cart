@@ -47,18 +47,20 @@ function ProductBox({ data, error, loading }) {
         />
         <div className={styles.quantity}>{filteredProducts.length} items</div>
       </div>
-      {filteredProducts.map((product) => (
-        <Product
-          key={product.id}
-          title={product.title}
-          img={product.image}
-          price={product.price}
-          ratingRate={product.rating.rate}
-          ratingCount={product.rating.count}
-          checkInCart={() => isProductInCart(product.id)}
-          handleClick={() => addProduct(product)}
-        />
-      ))}
+      <div className={styles.products}>
+        {filteredProducts.map((product) => (
+          <Product
+            key={product.id}
+            title={product.title}
+            img={product.image}
+            price={product.price}
+            ratingRate={product.rating.rate}
+            ratingCount={product.rating.count}
+            checkInCart={() => isProductInCart(product.id)}
+            handleClick={() => addProduct(product)}
+          />
+        ))}
+      </div>
     </div>
   );
 }
