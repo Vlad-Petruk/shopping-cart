@@ -5,7 +5,7 @@ function NavBar({cartAmount}) {
     return (
       <>
         <div className={styles.navBar}>
-          <div className={styles.logo}>DASHA.SHOP</div>
+          <div className={styles.logo}><Link to="/">DASHA.SHOP</Link></div>
           <div className={styles.navElements}>
             <Link to="/">
               <div className={styles.home}>Home</div>
