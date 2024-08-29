@@ -33,6 +33,12 @@ function Cart() {
     });
   };
 
+  const processBuying = ()=>{
+    setCart([]);
+    setCartAmount(0);
+    setItemAmounts({});
+  }
+
   return (
     <div className={styles.cart}>
       {cart.length > 0 ? (
@@ -69,7 +75,7 @@ function Cart() {
                 <p>Total</p>
                 <p className={styles.totalPrice}>${sum}</p>
               </div>
-              <button className={styles.buyBtn}>Buy</button>
+              <button onClick={processBuying} className={styles.buyBtn}>Buy</button>
             </div>
           </div>
         </>
