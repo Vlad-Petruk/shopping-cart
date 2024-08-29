@@ -27,7 +27,7 @@ function Footer() {
           </div>
           <div className={styles.madeBy}>
             <div className={styles.years}>DASHA.SHOP © 2000-2024. All Rigths Reserved</div>
-            <div className={styles.made}>Project made by <a href="https://github.com/Vlad-Petruk">Vlad Petruk</a>, inspired by <a href="https://bio.link/viads">Viads</a> using Fake Store API</div>
+            <div className={styles.made}>Project made by <a href="https://github.com/Vlad-Petruk">Vlad Petruk</a>, inspired by <a href="https://bio.link/viads">Viads</a>&apos;s work, utilzes the Fake Store API</div>
           </div>
         </div>
       </>
