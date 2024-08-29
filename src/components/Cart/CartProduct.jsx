@@ -20,7 +20,7 @@ function CartProduct({ id, title, img, price, itemAmount, updateItemAmount, dele
         <p className={styles.itemPrice}>${price}</p>
       </div>
       <div className={styles.btnSection}>
-        <button className={styles.delete} onClick={deleteItem}>X</button>
+        <button className={styles.delete} onClick={deleteItem}>&times;</button>
         <div className={styles.plusMinusBox}>
           <div onClick={decrease}>−</div>
           <div className={styles.itemAmount}>{itemAmount}</div>

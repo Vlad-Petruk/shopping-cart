@@ -84,6 +84,7 @@
     width: 1.5rem;
     border: none;
     background: rgb(245, 111, 111);
+    font-size: 18px;
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
@@ -177,6 +178,11 @@
     border: none;
     border-radius: 9000px;
     align-self: center;
+    transition: transform .3s ease;
+}
+
+.buyBtn:hover{
+    transform: scale(1.1);
 }
 
 /* Empty cart */
