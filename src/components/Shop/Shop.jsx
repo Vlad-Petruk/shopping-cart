@@ -2,11 +2,11 @@ import { useState } from "react";
 import SideBar from "./SideBar";
 import ProductBox from "./ProductBox";
 import styles from "./Shop.module.css"
-import useFetch from "../../hooks/useFetch";
+import useProducts from "../../hooks/useProducts";
 
 function Shop() {
   const [category, setCategory] = useState('');
-  const { data, error, loading } = useFetch(category);
+  const { data, error, loading } = useProducts(category);
 
   const handleCategorySelect = (selectedCategory) => {
     setCategory(selectedCategory);

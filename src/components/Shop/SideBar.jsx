@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from "./Shop.module.css";
-// import useFetch from './useFetch';
+
 
 function SideBar({ onCategorySelect }) {
   const handleCategoryClick = (category) => {
