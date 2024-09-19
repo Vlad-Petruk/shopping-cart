@@ -6,23 +6,24 @@ function useProducts(parameters) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    fetch(`https://fakestoreapi.com/products${parameters}`, { mode: 'cors' })
-      .then((response) => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`https://fakestoreapi.com/products${parameters}`, { mode: 'cors' });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json();
-      })
-      .then(data => {
-        const dataToArray = Object.values(data);
+        const result = await response.json();
+        const dataToArray = Object.values(result);
         setData(dataToArray);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         setError(error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, [parameters]);
 
   return { data, error, loading };
