@@ -27,13 +27,13 @@ function Product ({title, price, img, ratingRate, ratingCount, handleClick, isIn
 }
 
 Product.propTypes = {
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    img: PropTypes.string.isRequired,
-    ratingRate: PropTypes.number.isRequired,
-    ratingCount: PropTypes.number.isRequired,
-    handleClick: PropTypes.func.isRequired,
-    isInCart: PropTypes.bool.isRequired,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    img: PropTypes.string,
+    ratingRate: PropTypes.number,
+    ratingCount: PropTypes.number,
+    handleClick: PropTypes.func,
+    isInCart: PropTypes.bool,
 };
 
 export default Product
