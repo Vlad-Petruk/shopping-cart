@@ -1,20 +1,21 @@
-import { useState, useEffect } from "react";
-import { useOutletContext, Link } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { ShopContext } from "../../App";
 import CartProduct from "./CartProduct";
 import styles from "./Cart.module.css";
 
 function Cart() {
-  const [cart, setCart, cartAmount, setCartAmount] = useOutletContext();
+  const {cartItems, setCartItems} = useContext(ShopContext);
   const [itemAmounts, setItemAmounts] = useState({});
   const [sum, setSum] = useState(0);
 
   useEffect(() => {
-    const totalSum = cart.reduce((acc, product) => {
+    const totalSum = cartItems.reduce((acc, product) => {
       const amount = itemAmounts[product.id] || 1; 
       return acc + product.price * amount;
     }, 0);
     setSum(totalSum.toFixed(2));
-  }, [cart, itemAmounts]);
+  }, [cartItems, itemAmounts]);
 
   const updateItemAmount = (id, newAmount) => {
     setItemAmounts((prevAmounts) => ({
@@ -24,9 +25,8 @@ function Cart() {
   };
 
   const deleteItem = (id) => {
-    const updatedCart = cart.filter((product) => product.id !== id);
-    setCart(updatedCart);
-    setCartAmount(cartAmount - 1);
+    const updatedCart = cartItems.filter((product) => product.id !== id);
+    setCartItems(updatedCart);
     setItemAmounts((prevAmounts) => {
       const { [id]: _, ...rest } = prevAmounts;
       return rest;
@@ -34,19 +34,18 @@ function Cart() {
   };
 
   const processBuying = ()=>{
-    setCart([]);
-    setCartAmount(0);
+    setCartItems([]);
     setItemAmounts({});
   }
 
   return (
     <div className={styles.cart}>
-      {cart.length > 0 ? (
+      {cartItems.length > 0 ? (
         <>
           <div className={styles.productsBox}>
             <div className={styles.h1}>YOUR CART</div>
             <div className={styles.products}>
-              {cart.map((product) => (
+              {cartItems.map((product) => (
                 <CartProduct
                   key={product.id}
                   id={product.id}
