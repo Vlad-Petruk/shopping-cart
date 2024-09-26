@@ -1,20 +1,22 @@
-import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
 import styles from "./Shop.module.css";
 import Product from "../Product/Product";
 import Loading from "../Loading/Loading";
 import { useState } from "react";
+import { ShopContext } from "../../App";
+import useProducts from "../../hooks/useProducts";
 
-function ProductBox({ data, error, loading }) {
-  const [cart, setCart, cartAmount, setCartAmount] = useOutletContext();
+function ProductBox({category}) {
+  const {cartItems, setCartItems} = useContext(ShopContext);
   const [searchTerm, setSearchTerm] = useState("");
+  const { data, error, loading } = useProducts(category);
 
   function addProduct(product) {
-    setCart([...cart, product]);
-    setCartAmount(cartAmount + 1); 
+    setCartItems([...cartItems, product]); 
   }
 
   function isProductInCart(productId) {
-    return cart.some(cartItem => cartItem.id === productId);
+    return cartItems.some(cartItem => cartItem.id === productId);
   }
 
   // Handle search input change
