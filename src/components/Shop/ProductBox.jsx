@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import styles from "./Shop.module.css";
 import Product from "../Product/Product";
 import Loading from "../Loading/Loading";
@@ -11,13 +11,14 @@ function ProductBox({category}) {
   const [searchTerm, setSearchTerm] = useState("");
   const { data, error, loading } = useProducts(category);
 
-  function addProduct(product) {
-    setCartItems([...cartItems, product]); 
-  }
+  const addProduct = useCallback((product) => {
+    setCartItems((prevCartItems) => [...prevCartItems, product]);
+  }, [setCartItems]);
+  
 
-  function isProductInCart(productId) {
+  const isProductInCart = useCallback((productId) => {
     return cartItems.some(cartItem => cartItem.id === productId);
-  }
+  },[cartItems])
 
   // Handle search input change
   const handleSearchChange = (e) => {
