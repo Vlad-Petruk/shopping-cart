@@ -11,8 +11,8 @@ function Cart() {
   const totalSum = useMemo(() => {
     return cartItems.reduce((acc, product) => {
       const amount = itemAmounts[product.id] || 1;
-      return acc + product.price * amount;
-    }, 0);
+      return acc + Math.round(product.price * 100) * amount;
+    }, 0) / 100;
   }, [cartItems, itemAmounts]);
 
   const updateItemAmount = useCallback((id, newAmount) => {
