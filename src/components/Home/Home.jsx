@@ -27,7 +27,7 @@ function Home() {
         </div>
       </div>
       <div className={styles.photoBox}>
-        <img className={styles.img} src="/main-img.png" alt="" />
+        <img className={styles.img} src="/main-img.png" alt="models-photo" />
       </div>
     </div>
   );
