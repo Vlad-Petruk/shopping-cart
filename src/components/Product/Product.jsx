@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from "./Product.module.css";
 import { Link } from "react-router-dom";
 
@@ -24,5 +25,15 @@ function Product ({title, price, img, ratingRate, ratingCount, handleClick, isIn
         </div>
     )
 }
+
+Product.propTypes = {
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    img: PropTypes.string.isRequired,
+    ratingRate: PropTypes.number.isRequired,
+    ratingCount: PropTypes.number.isRequired,
+    handleClick: PropTypes.func.isRequired,
+    isInCart: PropTypes.bool.isRequired,
+};
 
 export default Product

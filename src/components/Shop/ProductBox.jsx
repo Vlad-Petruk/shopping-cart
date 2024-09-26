@@ -1,4 +1,5 @@
 import { useContext, useCallback } from "react";
+import PropTypes from 'prop-types';
 import styles from "./Shop.module.css";
 import Product from "../Product/Product";
 import Loading from "../Loading/Loading";
@@ -66,6 +67,10 @@ function ProductBox({category}) {
       </div>
     </div>
   );
+}
+
+ProductBox.propTypes = {
+  category: PropTypes.string.isRequired,
 }
 
 export default ProductBox;

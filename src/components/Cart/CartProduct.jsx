@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from "./Cart.module.css";
 
 function CartProduct({ id, title, img, price, itemAmount, updateItemAmount, deleteItem }) {
@@ -30,5 +31,15 @@ function CartProduct({ id, title, img, price, itemAmount, updateItemAmount, dele
     </div>
   );
 }
+
+CartProduct.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  itemAmount: PropTypes.number.isRequired,
+  updateItemAmount: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
+};
 
 export default CartProduct;

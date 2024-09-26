@@ -26,6 +26,7 @@ function Cart() {
     const updatedCart = cartItems.filter((product) => product.id !== id);
     setCartItems(updatedCart);
     setItemAmounts((prevAmounts) => {
+      // eslint-disable-next-line no-unused-vars
       const { [id]: _, ...rest } = prevAmounts;
       return rest;
     });
