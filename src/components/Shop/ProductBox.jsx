@@ -58,7 +58,7 @@ function ProductBox({category}) {
             price={product.price}
             ratingRate={product.rating.rate}
             ratingCount={product.rating.count}
-            checkInCart={() => isProductInCart(product.id)}
+            checkInCart={isProductInCart(product.id)}
             handleClick={() => addProduct(product)}
           />
         ))}
