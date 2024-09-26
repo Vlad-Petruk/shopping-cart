@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../App";
 import CartProduct from "./CartProduct";
@@ -7,36 +7,35 @@ import styles from "./Cart.module.css";
 function Cart() {
   const {cartItems, setCartItems} = useContext(ShopContext);
   const [itemAmounts, setItemAmounts] = useState({});
-  const [sum, setSum] = useState(0);
 
-  useEffect(() => {
-    const totalSum = cartItems.reduce((acc, product) => {
-      const amount = itemAmounts[product.id] || 1; 
+  const totalSum = useMemo(() => {
+    return cartItems.reduce((acc, product) => {
+      const amount = itemAmounts[product.id] || 1;
       return acc + product.price * amount;
     }, 0);
-    setSum(totalSum.toFixed(2));
   }, [cartItems, itemAmounts]);
 
-  const updateItemAmount = (id, newAmount) => {
+  const updateItemAmount = useCallback((id, newAmount) => {
     setItemAmounts((prevAmounts) => ({
       ...prevAmounts,
       [id]: newAmount,
     }));
-  };
-
-  const deleteItem = (id) => {
+  }, [setItemAmounts]);
+  
+  const deleteItem = useCallback((id) => {
     const updatedCart = cartItems.filter((product) => product.id !== id);
     setCartItems(updatedCart);
     setItemAmounts((prevAmounts) => {
       const { [id]: _, ...rest } = prevAmounts;
       return rest;
     });
-  };
-
-  const processBuying = ()=>{
+  }, [cartItems, setCartItems, setItemAmounts]);
+  
+  const processBuying = () => {
     setCartItems([]);
     setItemAmounts({});
   }
+  
 
   return (
     <div className={styles.cart}>
@@ -64,7 +63,7 @@ function Cart() {
               <p className={styles.h2}>Order Summary</p>
               <div className={styles.subtotal}>
                 <p>Subtotal</p>
-                <p className={styles.price}>${sum}</p>
+                <p className={styles.price}>${totalSum}</p>
               </div>
               <div className={styles.delivery}>
                 <p>Delivery fee</p>
@@ -72,7 +71,7 @@ function Cart() {
               </div>
               <div className={styles.total}>
                 <p>Total</p>
-                <p className={styles.totalPrice}>${sum}</p>
+                <p className={styles.totalPrice}>${totalSum}</p>
               </div>
               <button onClick={processBuying} className={styles.buyBtn}>Buy</button>
             </div>
