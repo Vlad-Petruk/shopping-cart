@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
+import { ShopContext } from '../../App';
+import { useContext } from 'react';
 import styles from './NavBar.module.css';
 
-function NavBar({cartAmount}) {
+function NavBar() {
+
+    const {cartItems} = useContext(ShopContext)
+
     return (
       <>
         <div className={styles.navBar}>
@@ -16,7 +21,7 @@ function NavBar({cartAmount}) {
             <Link to="cart">
             <div className={styles.cart}>
               <img className={styles.cartImg} src="/cart.png" alt="" />
-              <p className={styles.cartAmount}>{cartAmount}</p>
+              <p className={styles.cartAmount}>{cartItems.length}</p>
             </div>
             </Link>
           </div>
