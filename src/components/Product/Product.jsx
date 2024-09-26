@@ -1,7 +1,7 @@
 import styles from "./Product.module.css";
 import { Link } from "react-router-dom";
 
-function Product ({title, price, img, ratingRate, ratingCount, handleClick, checkInCart}) {
+function Product ({title, price, img, ratingRate, ratingCount, handleClick, isInCart}) {
 
     return (
         <div className={styles.productBox}>
@@ -16,7 +16,7 @@ function Product ({title, price, img, ratingRate, ratingCount, handleClick, chec
                 </div>
                 <div className={styles.priceAndBtn}>
                     <p className={styles.price}>${price}</p>
-                    {checkInCart? <Link to ="/cart"><p className={styles.inCart}>In the cart✅</p></Link> : 
+                    {isInCart? <Link to ="/cart"><p className={styles.inCart}>In the cart✅</p></Link> : 
                     <button className={styles.btn} onClick={handleClick}><img className={styles.cartPng} src="/cart.png" alt="" />Add to cart</button>}
                     
                 </div>
