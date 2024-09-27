@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from "./Shop.module.css";
 
 
@@ -21,6 +21,10 @@ function SideBar({ onCategorySelect }) {
       </div>
     </div>
   );
+}
+
+SideBar.propTypes = {
+  onCategorySelect: PropTypes.func.isRequired,
 }
 
 export default SideBar;
