@@ -1,7 +1,6 @@
-# Memory-card
+# Shopping cart
 
-## This project is developed with React.
-This is my latest pet project that reflects my current knowledge and abilties.
+## This is my latest pet project that reflects my current knowledge and abilties.
 It was created as part of [The Odin Project](https://www.theodinproject.com) course. 
 
 The main goal of this project was to build a fake store using React, focusing on hooks such as useState, useContext, useMemo, and useCallback. The app allows users to browse products, add items to their cart, and adjust item quantities. The cart dynamically updates the total price based on the selected items and their quantities. Users can also remove items from the cart, and the system ensures that the cart contents and total are recalculated in real time. The project incorporates product filtering by category and search functionality. Once the user completes their selection, they can finalize the purchase, and the cart is reset.
